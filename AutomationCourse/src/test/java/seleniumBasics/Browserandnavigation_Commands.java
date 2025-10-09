@@ -6,13 +6,15 @@ public class Browserandnavigation_Commands extends Base
 	{
 	   String title = driver.getTitle();
 	   System.out.println(title);
+	
 	   
-	   String source = driver.getPageSource();
-	 //  System.out.println(source);
+       String source = driver.getPageSource();
+      // System.out.println(source);
+	
 	   
-	   String url = driver.getCurrentUrl();
+	  String url = driver.getCurrentUrl();
 	   System.out.println(url);
-	   
+	
 	   String handleid = driver.getWindowHandle();
 	   System.out.println(handleid);
 	}
@@ -28,10 +30,8 @@ public class Browserandnavigation_Commands extends Base
 	{
 		Browserandnavigation_Commands commands = new Browserandnavigation_Commands();
 		commands.initialiseBrowser();
-		//commands.browserCommand();
+        //commands.browserCommand();
 		commands.navigationCommand();
-		
-		// TODO Auto-generated method stub
 	}
-
+	
 }
