@@ -13,6 +13,9 @@ public class WebElementsCommands extends Base
 	  messageinputfield.sendKeys("NEHA");
 	  
 	  WebElement showmessagebutton = driver.findElement(By.xpath("//button[@id='button-one']"));
+	  System.out.println(showmessagebutton.isDisplayed());
+	  System.out.println(showmessagebutton.isEnabled());
+	  
 	  showmessagebutton.click();
 	  
 	  WebElement yourmessagefield = driver.findElement(By.xpath("//div[@id='message-one']"));
