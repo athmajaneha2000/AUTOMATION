@@ -9,13 +9,12 @@ public class WebElementsCommands extends Base
   {
 	  driver.navigate().to("https://selenium.qabible.in/simple-form-demo.php");
 	  
-	  WebElement messageinputfield =driver.findElement(By.xpath("//input[@id='single-input-field']"));
-	  messageinputfield.sendKeys("NEHA");
+	  WebElement messageinputfield = driver.findElement(By.xpath("//input[@id='single-input-field']"));
+	  messageinputfield.sendKeys("ATHMAJA");
 	  
 	  WebElement showmessagebutton = driver.findElement(By.xpath("//button[@id='button-one']"));
 	  System.out.println(showmessagebutton.isDisplayed());
 	  System.out.println(showmessagebutton.isEnabled());
-	  
 	  showmessagebutton.click();
 	  
 	  WebElement yourmessagefield = driver.findElement(By.xpath("//div[@id='message-one']"));
@@ -25,7 +24,6 @@ public class WebElementsCommands extends Base
 	  System.out.println(gettotalbutton.getTagName());
 	  
 	  System.out.println(showmessagebutton.getCssValue("background-color"));
-	  
   }
 	public static void main(String[] args) 
 	{
