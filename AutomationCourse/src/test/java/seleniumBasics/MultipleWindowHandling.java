@@ -10,14 +10,14 @@ public class MultipleWindowHandling extends Base
 {
 public void verifyMultipleWindow()
 {
-	driver.navigate().to(" https://demo.guru99.com/popup.php");
-	String parentWindowId =driver.getWindowHandle();
+	driver.navigate().to("https://demo.guru99.com/popup.php");
+	String parentWindowId = driver.getWindowHandle();
 	System.out.println(parentWindowId);
 	
-	WebElement window1=driver.findElement(By.xpath("//a[text()=\"Click Here\"]"));
+	WebElement window1 = driver.findElement(By.xpath("//a[text()=\"Click Here\"]"));
 	window1.click();
 	
-	Set<String> handleIds = driver.getWindowHandles();
+	Set<String> handleIds =driver.getWindowHandles();
 	System.out.println(handleIds);
 	
 	Iterator<String> it=handleIds.iterator(); 
@@ -25,21 +25,19 @@ public void verifyMultipleWindow()
 		{ 
 			String currentId=it.next(); 
 			if(!currentId.equals(parentWindowId)) 
-		{ 
+			{ 
 				driver.switchTo().window(currentId); 
 				 
 				WebElement email=driver.findElement(By.xpath("//input[@name='emailid']")); 
-		    	email.sendKeys("abc@gmail.com"); 
+				email.sendKeys("abc@gmail.com"); 
 				 
 				WebElement submit_btn=driver.findElement(By.xpath("//input[@name='btnLogin']")); 
 				submit_btn.click(); 
 				 
 				driver.switchTo().window(parentWindowId); 
-				 
-		} 
-				 
+			} 
+		  }			 
 		}
-}
 	public static void main(String[] args)
 	{
 		MultipleWindowHandling handling = new MultipleWindowHandling();
