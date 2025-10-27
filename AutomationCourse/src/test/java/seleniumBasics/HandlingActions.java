@@ -12,51 +12,47 @@ public class HandlingActions extends Base
 {
    public void verifyRightclick()
    {
-	   WebElement other = driver.findElement(By.id("others"));
-	   
+	   driver.navigate().to("https://selenium.qabible.in/");
+	   WebElement others = driver.findElement(By.id("others"));
 	   Actions act = new Actions(driver);
-	   act.contextClick(other).build().perform();
+	   act.contextClick(others).build().perform();
    }
    public void verifyMousehover()
    {
-      WebElement other = driver.findElement(By.id("others"));
+	   driver.navigate().to("https://selenium.qabible.in/");
+	   WebElement other = driver.findElement(By.id("others"));
 	   
 	   Actions act = new Actions(driver);
 	   act.moveToElement(other).build().perform();
    }
-   public void verifyDraganddrop()
+   public void verifyDragandDrop()
    {
 	   driver.navigate().to(" https://demoqa.com/droppable");
 	   WebElement dragmebox = driver.findElement(By.id("draggable"));
-	   
 	   WebElement dropmebox = driver.findElement(By.id("droppable"));
 	   Actions act = new Actions(driver);
 	   act.dragAndDrop(dragmebox, dropmebox).build().perform();
    }
-    public void verifyKeyboardaction() throws AWTException 
-    {
-    	Robot robot = new Robot();
-    	robot.keyPress(KeyEvent.VK_CONTROL);
-    	robot.keyPress(KeyEvent.VK_T);
-    	
-    	robot.keyRelease(KeyEvent.VK_CONTROL);
-    	robot.keyRelease(KeyEvent.VK_T);
-    }
+   public void verifyKeyboardaction() throws AWTException
+   {
+	  Robot robot = new Robot();
+	  robot.keyPress(KeyEvent.VK_CONTROL);
+	  robot.keyPress(KeyEvent.VK_T);
+	  robot.keyRelease(KeyEvent.VK_CONTROL);
+	  robot.keyRelease(KeyEvent.VK_T);  
+   }
 	public static void main(String[] args)
 	{
 		HandlingActions action = new HandlingActions();
 		action.initialiseBrowser();
 		//action.verifyRightclick();
 		//action.verifyMousehover();
-		//action.verifyDraganddrop();
-		try {
+		//action.verifyDragandDrop();
+	     try {
 			action.verifyKeyboardaction();
 		} catch (AWTException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// TODO Auto-generated method stub
-
-	}
-
+}
 }
