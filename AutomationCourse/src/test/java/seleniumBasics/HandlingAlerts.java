@@ -11,9 +11,10 @@ public class HandlingAlerts extends Base
 	driver.navigate().to("https://demoqa.com/alerts");
 	WebElement clickbutton1 = driver.findElement(By.id("alertButton"));
 	clickbutton1.click();
-	 Alert al = driver.switchTo().alert();
-	 al.accept();
-	}
+	Alert al = driver.switchTo().alert();
+	al.accept();
+	
+  }
      public void verifyConfirmalert()
      {
     	 driver.navigate().to("https://demoqa.com/alerts");
@@ -28,14 +29,14 @@ public class HandlingAlerts extends Base
     	 WebElement clickbutton4 = driver.findElement(By.id("promtButton"));
     	 clickbutton4.click();
     	 Alert al = driver.switchTo().alert();
-    	 al.sendKeys("NEHA");
+    	 al.sendKeys("ATHMAJA");
     	 al.accept();
      }
 	public static void main(String[] args)
 	{
 		HandlingAlerts alert = new HandlingAlerts();
-		//alert.initialiseBrowser();
-		//alert.verifySimplealert();
+		alert.initialiseBrowser();
+	   // alert.verifySimplealert();
 		//alert.verifyConfirmalert();
 		alert.verifyPromptalert();
 		// TODO Auto-generated method stub

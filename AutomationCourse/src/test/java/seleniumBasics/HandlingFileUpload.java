@@ -1,13 +1,9 @@
 package seleniumBasics;
-
-
-
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -32,7 +28,7 @@ public void fileUploadingUsingSendKeys()
     	selectpdffilebutton.click();
     	
     	StringSelection sel = new StringSelection("C\\Users\\Admin\\git\\AUTOMATION\\AutomationCourse\\src\\test\\resources\\ASSIGNMENT NO 3 MANUAL TESTING.pdf");
-    	Toolkit.getDefaultToolkit().getSystemClipboard().getContents(sel);
+    	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sel,null);
     	
     	Robot rob = new Robot();
     	rob.delay(2500);
@@ -62,9 +58,5 @@ public void fileUploadingUsingSendKeys()
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		// TODO Auto-generated method stub
-
 	}
-
 }

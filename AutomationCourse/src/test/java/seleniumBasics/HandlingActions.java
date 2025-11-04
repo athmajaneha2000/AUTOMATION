@@ -13,9 +13,9 @@ public class HandlingActions extends Base
    public void verifyRightclick()
    {
 	   driver.navigate().to("https://selenium.qabible.in/");
-	   WebElement others = driver.findElement(By.id("others"));
+	   WebElement other = driver.findElement(By.id("others"));
 	   Actions act = new Actions(driver);
-	   act.contextClick(others).build().perform();
+	   act.contextClick(other).build().perform();
    }
    public void verifyMousehover()
    {
@@ -33,6 +33,7 @@ public class HandlingActions extends Base
 	   Actions act = new Actions(driver);
 	   act.dragAndDrop(dragmebox, dropmebox).build().perform();
    }
+
    public void verifyKeyboardaction() throws AWTException
    {
 	  Robot robot = new Robot();
@@ -46,13 +47,14 @@ public class HandlingActions extends Base
 		HandlingActions action = new HandlingActions();
 		action.initialiseBrowser();
 		//action.verifyRightclick();
-		//action.verifyMousehover();
+	    //action.verifyMousehover();
 		//action.verifyDragandDrop();
-	     try {
+	    try {
 			action.verifyKeyboardaction();
 		} catch (AWTException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-}
-}
+		
+		}
+	}
