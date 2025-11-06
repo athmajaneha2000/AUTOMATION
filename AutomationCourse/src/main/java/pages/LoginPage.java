@@ -7,29 +7,27 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage 
 {
-    public WebDriver driver;
-    public LoginPage(WebDriver driver)
-    {
-    this.driver= driver;
-    
-    PageFactory.initElements(driver,this);
-     }
-
-@FindBy(id="user-name")WebElement usernamefield;
-@FindBy(id="password")WebElement passwordfield;
-@FindBy(id="login-button")WebElement loginbutton;
-
-   public void enterUsenameOnUsernameField()
+   public WebDriver driver;
+   public LoginPage(WebDriver driver)
    {
-	  usernamefield.sendKeys("standard_user");
+	   this.driver=driver;
+	   PageFactory.initElements(driver,this);
    }
-    public void enterPasswordOnPasswordField()
-    {
-	   passwordfield.sendKeys("secret_sauce");
-    }
-    public void clickOnLoginButton()
-    {
-	  loginbutton.click();
-    }
+   @FindBy(id="user-name") WebElement usernamefield ;
+   @FindBy(id="password") WebElement  passwordfield ;
+   @FindBy(id="login-button") WebElement loginbutton;
+
+public void enterUsernameOnUsernameField(String username)
+{
+	usernamefield.sendKeys( username);
+}
+public void enterPasswordOnPasswordField(String password)
+{
+	passwordfield.sendKeys(password);
+}
+public void clickOnLoginButton()
+{
+	loginbutton.click();
+}
 }
 
